@@ -74,7 +74,7 @@ const Otp = () => {
             selectionColor={colors.black}
             keyboardType="numeric"
             textContentType="oneTimeCode"
-            autoFocus
+            autoFocus={true}
             onChangeText={handleOtpChange}
             value={otp}
             maxLength={6}

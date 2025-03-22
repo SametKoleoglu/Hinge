@@ -16,9 +16,12 @@ import {
 // LOCALE IMPORTS
 import { fonts } from "@/src/constants/fonts";
 import { supabase } from "../utils/supabase";
+import { AuthProvider } from "../store/auth";
+import { Image } from "expo-image";
 
 cssInterop(VideoView, { className: { target: "style" } });
 cssInterop(Ionicons, { className: { target: "style" } });
+cssInterop(Image, { className: { target: "style" } });
 
 SplashScreen.preventAutoHideAsync();
 
@@ -39,9 +42,12 @@ export default function Layout() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="(app)" />
-      </Stack>
+      <AuthProvider>
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="(app)" />
+          <Stack.Screen name="(auth)" options={{ animation: "none" }} />
+        </Stack>
+      </AuthProvider>
     </QueryClientProvider>
   );
 }

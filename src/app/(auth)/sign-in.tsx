@@ -22,8 +22,8 @@ const Page = () => {
             </Text>
           </View>
           <Link href={"/phone"} asChild>
-            <Pressable className="bg-fuchsia-900 h-16 items-center justify-center rounded-full">
-              <Text className="text-white text-lg font-poppins-semibold">
+            <Pressable className="bg-fuchsia-900 h-16 w-96 self-center items-center justify-center rounded-full">
+              <Text className="text-white font-bold text-lg font-poppins-semibold">
                 Sign in with phone
               </Text>
             </Pressable>
